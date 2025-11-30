@@ -2,9 +2,15 @@ import { Section } from "@/components/ui/section";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
-import { BarChart2, ShieldCheck, FileText, Layers } from "lucide-react";
+import { BarChart2, ShieldCheck, FileText, Layers, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
-export function Projects() {
+interface ProjectsProps {
+  preview?: boolean;
+}
+
+export function Projects({ preview = false }: ProjectsProps) {
   const projects = [
     {
       title: "Internal Audit Engagement (NGO Sector)",
@@ -32,10 +38,12 @@ export function Projects() {
     }
   ];
 
+  const displayedProjects = preview ? projects.slice(0, 3) : projects;
+
   return (
     <Section id="projects" background="white">
       <div className="grid md:grid-cols-2 gap-8">
-        {projects.map((project, index) => (
+        {displayedProjects.map((project, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
@@ -64,6 +72,18 @@ export function Projects() {
           </motion.div>
         ))}
       </div>
+      
+      {preview && (
+        <div className="mt-12 text-center">
+          <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+            <Link href="/projects">
+              <a className="flex items-center">
+                View All Projects <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Link>
+          </Button>
+        </div>
+      )}
     </Section>
   );
 }

@@ -1,8 +1,14 @@
 import { Section } from "@/components/ui/section";
 import { motion } from "framer-motion";
-import { GraduationCap, Calendar } from "lucide-react";
+import { GraduationCap, Calendar, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
-export function Education() {
+interface EducationProps {
+  preview?: boolean;
+}
+
+export function Education({ preview = false }: EducationProps) {
   const education = [
     {
       degree: "Bachelor of Economics & Statistics",
@@ -25,8 +31,8 @@ export function Education() {
   ];
 
   return (
-    <Section id="education" background="white" className="rounded-xl shadow-sm border border-border/50 overflow-hidden p-0">
-      <div className="p-8 md:p-12">
+    <Section id="education" background="white" className={preview ? "" : "rounded-xl shadow-sm border border-border/50 overflow-hidden p-0"}>
+      <div className={preview ? "" : "p-8 md:p-12"}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,15 +59,31 @@ export function Education() {
                 <h3 className="text-lg font-bold text-primary leading-tight mb-2">{edu.degree}</h3>
                 <p className="text-accent font-medium">{edu.school}</p>
               </div>
-              <p className="text-sm text-muted-foreground mb-4 flex items-center gap-2">
-                <Calendar className="h-3 w-3" /> {edu.year}
-              </p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {edu.description}
-              </p>
+              {!preview && (
+                <>
+                  <p className="text-sm text-muted-foreground mb-4 flex items-center gap-2">
+                    <Calendar className="h-3 w-3" /> {edu.year}
+                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {edu.description}
+                  </p>
+                </>
+              )}
             </motion.div>
           ))}
         </div>
+
+        {preview && (
+          <div className="mt-10 text-center">
+            <Button asChild size="lg" variant="ghost" className="text-primary hover:text-accent">
+              <Link href="/about">
+                <a className="flex items-center">
+                  See More <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Link>
+            </Button>
+          </div>
+        )}
       </div>
     </Section>
   );

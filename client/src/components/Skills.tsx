@@ -1,8 +1,15 @@
 import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
+import { ArrowRight } from "lucide-react";
 
-export function Skills() {
+interface SkillsProps {
+  preview?: boolean;
+}
+
+export function Skills({ preview = false }: SkillsProps) {
   const skillCategories = [
     {
       title: "Audit & Finance Skills",
@@ -59,15 +66,32 @@ export function Skills() {
           >
             <h3 className="text-xl font-bold text-primary mb-6 border-b pb-3 border-border">{category.title}</h3>
             <div className="flex flex-wrap gap-2">
-              {category.skills.map((skill, i) => (
+              {category.skills.slice(0, preview ? 5 : undefined).map((skill, i) => (
                 <Badge key={i} variant="secondary" className="text-primary/90 bg-white border border-primary/10 hover:bg-primary hover:text-white font-medium py-1.5 px-3 transition-colors">
                   {skill}
                 </Badge>
               ))}
+              {preview && category.skills.length > 5 && (
+                 <Badge variant="outline" className="text-muted-foreground border-dashed font-normal py-1.5 px-3">
+                   +{category.skills.length - 5} more
+                 </Badge>
+              )}
             </div>
           </motion.div>
         ))}
       </div>
+      
+      {preview && (
+        <div className="mt-10 text-center">
+          <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+            <Link href="/about">
+              <a className="flex items-center">
+                View Full Skills <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Link>
+          </Button>
+        </div>
+      )}
     </Section>
   );
 }

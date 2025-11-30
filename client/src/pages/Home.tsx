@@ -11,12 +11,12 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground overflow-x-hidden">
       <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Education />
-      <Tools />
+      <About preview={true} />
+      <Skills preview={true} />
+      <Experience preview={true} />
+      <Projects preview={true} />
+      <Education preview={true} />
+      <Tools preview={true} />
       <Contact />
     </div>
   );

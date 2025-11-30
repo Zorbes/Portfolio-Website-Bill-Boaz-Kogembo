@@ -1,9 +1,15 @@
 import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
-import { FileSpreadsheet, Database, Terminal, BarChart3, Briefcase, Layers } from "lucide-react";
+import { FileSpreadsheet, Database, Terminal, BarChart3, Briefcase, Layers, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
-export function Tools() {
+interface ToolsProps {
+  preview?: boolean;
+}
+
+export function Tools({ preview = false }: ToolsProps) {
   const tools = [
     { name: "Microsoft Excel (Advanced)", icon: <FileSpreadsheet className="h-5 w-5" /> },
     { name: "Power BI", icon: <BarChart3 className="h-5 w-5" /> },
@@ -17,6 +23,8 @@ export function Tools() {
     { name: "Jira/Trello", icon: <Layers className="h-5 w-5" /> },
   ];
 
+  const displayedTools = preview ? tools.slice(0, 6) : tools;
+
   return (
     <Section id="tools" background="muted">
       <motion.div
@@ -26,13 +34,15 @@ export function Tools() {
         className="text-center mb-10"
       >
         <h2 className="text-3xl font-bold text-primary mb-4">Tools & Technologies</h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
-          Leveraging modern technology to enhance audit efficiency and accuracy.
-        </p>
+        {!preview && (
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Leveraging modern technology to enhance audit efficiency and accuracy.
+          </p>
+        )}
       </motion.div>
 
       <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-        {tools.map((tool, index) => (
+        {displayedTools.map((tool, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.9 }}
@@ -50,6 +60,18 @@ export function Tools() {
           </motion.div>
         ))}
       </div>
+      
+      {preview && (
+        <div className="mt-10 text-center">
+          <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+            <Link href="/about">
+              <a className="flex items-center">
+                See Full Tools <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Link>
+          </Button>
+        </div>
+      )}
     </Section>
   );
 }

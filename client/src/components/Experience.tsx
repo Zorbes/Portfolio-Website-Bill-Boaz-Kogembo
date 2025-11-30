@@ -1,7 +1,14 @@
 import { Section } from "@/components/ui/section";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
+import { ArrowRight } from "lucide-react";
 
-export function Experience() {
+interface ExperienceProps {
+  preview?: boolean;
+}
+
+export function Experience({ preview = false }: ExperienceProps) {
   const jobs = [
     {
       role: "Audit Associate",
@@ -65,10 +72,12 @@ export function Experience() {
     "Leadership at Bonga Kawewe"
   ];
 
+  const displayedJobs = preview ? jobs.slice(0, 2) : jobs;
+
   return (
     <Section id="experience" background="white">
       <div className="relative border-l-2 border-primary/20 ml-3 md:ml-6 space-y-16 pb-12">
-        {jobs.map((job, index) => (
+        {displayedJobs.map((job, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, x: -20 }}
@@ -97,16 +106,30 @@ export function Experience() {
         ))}
       </div>
 
-      <div className="mt-16 p-8 bg-slate-50 rounded-xl border border-border/50">
-        <h3 className="text-xl font-bold text-primary mb-4">More Experience</h3>
-        <div className="flex flex-wrap gap-4">
-          {otherExperience.map((exp, i) => (
-            <span key={i} className="px-4 py-2 bg-white border border-border rounded-full text-muted-foreground font-medium">
-              {exp}
-            </span>
-          ))}
+      {!preview && (
+        <div className="mt-16 p-8 bg-slate-50 rounded-xl border border-border/50">
+          <h3 className="text-xl font-bold text-primary mb-4">More Experience</h3>
+          <div className="flex flex-wrap gap-4">
+            {otherExperience.map((exp, i) => (
+              <span key={i} className="px-4 py-2 bg-white border border-border rounded-full text-muted-foreground font-medium">
+                {exp}
+              </span>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
+
+      {preview && (
+        <div className="mt-10 text-center">
+          <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+            <Link href="/experience">
+              <a className="flex items-center">
+                View Full Timeline <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Link>
+          </Button>
+        </div>
+      )}
     </Section>
   );
 }
