@@ -4,37 +4,70 @@ import { motion } from "framer-motion";
 export function Experience() {
   const jobs = [
     {
-      role: "Senior Auditor",
-      company: "Top Tier Audit Firm",
-      period: "2021 - Present",
-      description: "Leading statutory audit engagements for diverse clients. Evaluating internal control systems and recommending improvements. Ensuring compliance with IFRS and ISA standards."
-    },
-    {
       role: "Audit Associate",
-      company: "Regional Accounting Firm",
-      period: "2018 - 2021",
-      description: "Assisted in financial statement preparation and verification. Conducted substantive testing and analytical procedures. Supported senior auditors in complex engagements."
+      company: "Ronalds Africa LLP",
+      period: "Apr 2025 – Present",
+      items: [
+        "Led statutory audits for 8 entities",
+        "Ensured IFRS/ISA compliance",
+        "Prepared 12 financial statements & management letters",
+        "Mentored junior auditors",
+        "Identified control gaps & improved governance"
+      ]
     },
     {
-      role: "Finance Intern",
-      company: "Corporate Organization",
-      period: "2017 - 2018",
-      description: "Gained hands-on experience in accounts payable/receivable, bank reconciliations, and general ledger maintenance."
+      role: "Audit Trainee",
+      company: "Ronalds Africa LLP",
+      period: "Nov 2024 – Feb 2025",
+      items: [
+        "Supported planning & execution of audits",
+        "Drafted audit schedules, documentation",
+        "Participated in client meetings"
+      ]
+    },
+    {
+      role: "Account Officer",
+      company: "Mathare Community Outreach",
+      period: "Apr 2024 – Present",
+      items: [
+        "Reconciled ledger accounts",
+        "Processed 230+ monthly transactions",
+        "Prepared financial summaries",
+        "Monitored program budgets and donor compliance"
+      ]
+    },
+    {
+      role: "Data Analyst Trainee",
+      company: "Azubi Africa",
+      period: "Dec 2023 – Aug 2024",
+      items: [
+        "Built Power BI dashboards",
+        "Analyzed datasets using Python/SQL",
+        "Delivered insights to stakeholders"
+      ]
+    },
+    {
+      role: "Assistant Accountant",
+      company: "Britam Holdings PLC",
+      period: "Feb 2023 – Oct 2023",
+      items: [
+        "Automated receipting system",
+        "Posted 540+ monthly journal entries",
+        "Prepared financial statements",
+        "Reconciled multi-entity bank accounts"
+      ]
     }
+  ];
+
+  const otherExperience = [
+    "Cross-Cultural Mobilizer",
+    "Internal Audit Intern at Safaricom",
+    "Leadership at Bonga Kawewe"
   ];
 
   return (
     <Section id="experience" background="white">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="mb-12"
-      >
-        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Professional Experience</h2>
-      </motion.div>
-
-      <div className="relative border-l-2 border-primary/10 ml-3 md:ml-6 space-y-12">
+      <div className="relative border-l-2 border-primary/20 ml-3 md:ml-6 space-y-16 pb-12">
         {jobs.map((job, index) => (
           <motion.div
             key={index}
@@ -45,20 +78,34 @@ export function Experience() {
             className="relative pl-8 md:pl-12"
           >
             {/* Timeline Dot */}
-            <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent border-4 border-white shadow-sm" />
+            <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-accent border-4 border-white shadow-sm" />
             
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
               <h3 className="text-xl font-bold text-primary">{job.role}</h3>
-              <span className="text-sm font-medium text-muted-foreground bg-muted px-3 py-1 rounded-full w-fit mt-2 sm:mt-0">
+              <span className="text-sm font-medium text-white bg-primary px-3 py-1 rounded-full w-fit mt-2 sm:mt-0">
                 {job.period}
               </span>
             </div>
-            <h4 className="text-lg font-medium text-primary/80 mb-3">{job.company}</h4>
-            <p className="text-muted-foreground leading-relaxed max-w-3xl">
-              {job.description}
-            </p>
+            <h4 className="text-lg font-medium text-accent mb-4">{job.company}</h4>
+            
+            <ul className="space-y-2 list-disc ml-4 text-muted-foreground">
+              {job.items.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
           </motion.div>
         ))}
+      </div>
+
+      <div className="mt-16 p-8 bg-slate-50 rounded-xl border border-border/50">
+        <h3 className="text-xl font-bold text-primary mb-4">More Experience</h3>
+        <div className="flex flex-wrap gap-4">
+          {otherExperience.map((exp, i) => (
+            <span key={i} className="px-4 py-2 bg-white border border-border rounded-full text-muted-foreground font-medium">
+              {exp}
+            </span>
+          ))}
+        </div>
       </div>
     </Section>
   );

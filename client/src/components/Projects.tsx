@@ -2,38 +2,39 @@ import { Section } from "@/components/ui/section";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
-import { BarChart2, Database, FileSpreadsheet } from "lucide-react";
+import { BarChart2, ShieldCheck, FileText, Layers } from "lucide-react";
 
 export function Projects() {
   const projects = [
     {
-      title: "Financial Dashboard Automation",
-      description: "Developed an interactive Power BI dashboard to automate monthly financial reporting, reducing preparation time by 40%.",
-      tags: ["Power BI", "DAX", "SQL"],
+      title: "Internal Audit Engagement (NGO Sector)",
+      description: "Performed full-scope statutory audit, identified compliance gaps, and prepared IFRS-compliant financial statements.",
+      tags: ["Statutory Audit", "IFRS", "Compliance"],
+      icon: <ShieldCheck className="h-8 w-8 text-accent mb-4" />
+    },
+    {
+      title: "Controls Review for Corporate Client",
+      description: "Evaluated internal controls, risk exposure, and produced actionable recommendations.",
+      tags: ["Internal Controls", "Risk Assessment", "Advisory"],
+      icon: <Layers className="h-8 w-8 text-accent mb-4" />
+    },
+    {
+      title: "Power BI Audit Dashboard",
+      description: "Built analytics dashboard to visualize audit findings, risk areas, and financial trends.",
+      tags: ["Power BI", "Data Analytics", "Visualization"],
       icon: <BarChart2 className="h-8 w-8 text-accent mb-4" />
     },
     {
-      title: "Audit Anomaly Detection Tool",
-      description: "Created a Python script using Pandas to identify irregularities in general ledger transactions, enhancing audit sampling efficiency.",
-      tags: ["Python", "Pandas", "Audit"],
-      icon: <Database className="h-8 w-8 text-accent mb-4" />
-    },
-    {
-      title: "Revenue Reconciliation Model",
-      description: "Built a complex Excel model with VBA macros to reconcile revenue streams across multiple systems for a large retail client.",
-      tags: ["Excel", "VBA", "Financial Modelling"],
-      icon: <FileSpreadsheet className="h-8 w-8 text-accent mb-4" />
+      title: "Reconciliation Automation (Britam)",
+      description: "Helped automate receipting, improving processing time by 21%.",
+      tags: ["Automation", "Process Improvement", "Efficiency"],
+      icon: <FileText className="h-8 w-8 text-accent mb-4" />
     }
   ];
 
   return (
-    <Section id="projects" background="muted">
-      <div className="mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Featured Projects</h2>
-        <p className="text-muted-foreground">Showcasing the intersection of finance and technology.</p>
-      </div>
-
-      <div className="grid md:grid-cols-3 gap-6">
+    <Section id="projects" background="white">
+      <div className="grid md:grid-cols-2 gap-8">
         {projects.map((project, index) => (
           <motion.div
             key={index}
@@ -42,18 +43,18 @@ export function Projects() {
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
           >
-            <Card className="h-full hover:shadow-lg transition-shadow duration-300 border-none shadow-sm bg-white">
+            <Card className="h-full hover:shadow-lg transition-shadow duration-300 border-border/50 shadow-sm bg-slate-50">
               <CardHeader>
                 {project.icon}
                 <CardTitle className="text-xl text-primary">{project.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base mb-6">
+                <CardDescription className="text-base mb-6 text-muted-foreground">
                   {project.description}
                 </CardDescription>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, i) => (
-                    <Badge key={i} variant="outline" className="text-primary/70 border-primary/20">
+                    <Badge key={i} variant="outline" className="text-primary/80 border-primary/20 bg-white">
                       {tag}
                     </Badge>
                   ))}

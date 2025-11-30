@@ -4,29 +4,6 @@ import { CheckCircle2, BarChart3, ShieldCheck, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function About() {
-  const highlights = [
-    {
-      icon: <ShieldCheck className="h-6 w-6 text-accent" />,
-      title: "Audit & Assurance",
-      description: "Extensive experience in statutory audits and risk assessment."
-    },
-    {
-      icon: <FileText className="h-6 w-6 text-accent" />,
-      title: "IFRS Compliance",
-      description: "Deep understanding of International Financial Reporting Standards."
-    },
-    {
-      icon: <BarChart3 className="h-6 w-6 text-accent" />,
-      title: "Data Analytics",
-      description: "Leveraging Power BI, Python, and SQL for financial insights."
-    },
-    {
-      icon: <CheckCircle2 className="h-6 w-6 text-accent" />,
-      title: "Internal Controls",
-      description: "Strengthening governance and operational efficiency."
-    }
-  ];
-
   return (
     <Section id="about" background="white">
       <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -37,43 +14,49 @@ export function About() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">About Me</h2>
-          <div className="space-y-4 text-muted-foreground leading-relaxed">
+          <div className="space-y-4 text-muted-foreground leading-relaxed text-lg">
             <p>
-              I am a dedicated <strong>Certified Public Accountant (CPA-K)</strong> with a robust background in audit, finance, and compliance. 
-              My career is built on a foundation of integrity, precision, and analytical thinking.
+              Bill Boaz Kogembo is a results-driven <strong>Auditor and Finance Professional</strong> with over 3 years of experience supporting corporate, NGO, religious, and public sector organizations.
             </p>
             <p>
-              Unlike traditional finance professionals, I integrate modern data analytics tools like <strong>Python and SQL</strong> into financial reporting, 
-              allowing for deeper insights and more efficient audit processes. I specialize in identifying risks, optimizing controls, and ensuring strict adherence to regulatory standards.
+              Skilled in statutory audits, IFRS compliance, internal controls, audit planning, management letters, and financial reporting.
+              He is also experienced in <strong>data analytics using Power BI, Python, and SQL</strong> to deliver deeper audit insights.
             </p>
             <p>
-              My goal is to help organizations not just maintain compliance, but to leverage their financial data for strategic growth.
+              Bill is seeking remote roles such as Audit Senior, Internal Auditor, or Risk and Controls Analyst to lead engagements and strengthen financial governance.
             </p>
           </div>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {highlights.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <Card className="h-full border-none shadow-md bg-muted/30 hover:bg-muted/50 transition-colors">
-                <CardContent className="p-6 flex flex-col items-start gap-4">
-                  <div className="p-3 bg-white rounded-lg shadow-sm text-primary">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-primary mb-2">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+          <Card className="border-none shadow-md bg-slate-50 hover:bg-slate-100 transition-colors">
+            <CardContent className="p-6">
+              <ShieldCheck className="h-8 w-8 text-accent mb-4" />
+              <h3 className="font-bold text-primary mb-2">Audit & Assurance</h3>
+              <p className="text-sm text-muted-foreground">Leading engagements and strengthening governance.</p>
+            </CardContent>
+          </Card>
+          <Card className="border-none shadow-md bg-slate-50 hover:bg-slate-100 transition-colors">
+            <CardContent className="p-6">
+              <FileText className="h-8 w-8 text-accent mb-4" />
+              <h3 className="font-bold text-primary mb-2">IFRS Compliance</h3>
+              <p className="text-sm text-muted-foreground">Ensuring adherence to international standards.</p>
+            </CardContent>
+          </Card>
+          <Card className="border-none shadow-md bg-slate-50 hover:bg-slate-100 transition-colors">
+            <CardContent className="p-6">
+              <BarChart3 className="h-8 w-8 text-accent mb-4" />
+              <h3 className="font-bold text-primary mb-2">Data Analytics</h3>
+              <p className="text-sm text-muted-foreground">Using Power BI, Python & SQL for insights.</p>
+            </CardContent>
+          </Card>
+          <Card className="border-none shadow-md bg-slate-50 hover:bg-slate-100 transition-colors">
+            <CardContent className="p-6">
+              <CheckCircle2 className="h-8 w-8 text-accent mb-4" />
+              <h3 className="font-bold text-primary mb-2">Internal Controls</h3>
+              <p className="text-sm text-muted-foreground">Evaluating risk and improving processes.</p>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </Section>

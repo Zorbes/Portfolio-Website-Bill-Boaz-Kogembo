@@ -1,52 +1,68 @@
 import { Section } from "@/components/ui/section";
-import { GraduationCap } from "lucide-react";
+import { motion } from "framer-motion";
+import { GraduationCap, Calendar } from "lucide-react";
 
 export function Education() {
+  const education = [
+    {
+      degree: "Bachelor of Economics & Statistics",
+      school: "University of Nairobi",
+      year: "Graduated",
+      description: "Strong foundation in economic theory, statistical analysis, and quantitative methods."
+    },
+    {
+      degree: "Certified Public Accountant (CPA-K)",
+      school: "Strathmore University",
+      year: "Completed",
+      description: "Professional certification in accounting, auditing, and finance."
+    },
+    {
+      degree: "Data Analytics Program",
+      school: "Azubi Africa",
+      year: "Completed",
+      description: "Intensive training in Power BI, Python, SQL, and data visualization for business insights."
+    }
+  ];
+
   return (
-    <Section id="education" background="white">
-       <div className="flex flex-col md:flex-row gap-12">
-         <div className="md:w-1/3">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Education & <br/>Certifications</h2>
-            <p className="text-muted-foreground">
-              Continuous learning and professional development are at the core of my career.
-            </p>
-         </div>
-         
-         <div className="md:w-2/3 space-y-8">
-            <div className="flex gap-4 items-start">
-              <div className="p-2 bg-primary/5 rounded-lg mt-1">
-                <GraduationCap className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-primary">Certified Public Accountant (CPA-K)</h3>
-                <p className="text-primary/70">Institute of Certified Public Accountants of Kenya (ICPAK)</p>
-                <p className="text-sm text-muted-foreground mt-1">Fully Qualified Member</p>
-              </div>
-            </div>
+    <Section id="education" background="white" className="rounded-xl shadow-sm border border-border/50 overflow-hidden p-0">
+      <div className="p-8 md:p-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-10"
+        >
+          <h2 className="text-3xl font-bold text-primary mb-4 flex items-center gap-3">
+            <GraduationCap className="h-8 w-8 text-accent" />
+            Education & Certifications
+          </h2>
+        </motion.div>
 
-            <div className="flex gap-4 items-start">
-               <div className="p-2 bg-primary/5 rounded-lg mt-1">
-                <GraduationCap className="h-6 w-6 text-primary" />
+        <div className="grid md:grid-cols-3 gap-8">
+          {education.map((edu, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-muted/20 p-6 rounded-lg border border-border/50 hover:border-accent/30 transition-colors"
+            >
+              <div className="mb-4">
+                <h3 className="text-lg font-bold text-primary leading-tight mb-2">{edu.degree}</h3>
+                <p className="text-accent font-medium">{edu.school}</p>
               </div>
-              <div>
-                <h3 className="text-xl font-bold text-primary">Bachelor of Commerce (Finance Option)</h3>
-                <p className="text-primary/70">University of Nairobi</p>
-                <p className="text-sm text-muted-foreground mt-1">Second Class Honours (Upper Division)</p>
-              </div>
-            </div>
-
-            <div className="flex gap-4 items-start">
-               <div className="p-2 bg-primary/5 rounded-lg mt-1">
-                <GraduationCap className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-primary">Data Science & Analytics Certificate</h3>
-                <p className="text-primary/70">Moringa School</p>
-                <p className="text-sm text-muted-foreground mt-1">Python, SQL, Data Visualization</p>
-              </div>
-            </div>
-         </div>
-       </div>
+              <p className="text-sm text-muted-foreground mb-4 flex items-center gap-2">
+                <Calendar className="h-3 w-3" /> {edu.year}
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {edu.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </Section>
   );
 }
