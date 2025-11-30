@@ -1,0 +1,189 @@
+Create a modern, professional portfolio website for Bill Boaz Kogembo, an Audit, Risk, and Finance Professional (CPA-K) with 3+ years of experience in statutory audits, IFRS compliance, internal controls, financial reporting, and data-driven auditing.
+
+Build the website with the following sections:
+1. HERO SECTION
+
+Headline: “Audit, Risk & Finance Professional | CPA-K”
+
+Subheadline:
+“Strengthening financial integrity through audit execution, internal controls, data analytics, and IFRS-compliant reporting.”
+
+Background: clean corporate look
+
+CTA buttons: Download CV, Contact Me
+
+Add a professional photo placeholder
+
+2. ABOUT ME
+
+Include a short narrative based on the CV:
+
+“Bill Boaz Kogembo is a results-driven Auditor and Finance Professional with over 3 years of experience supporting corporate, NGO, religious, and public sector organizations. Skilled in statutory audits, IFRS compliance, internal controls, audit planning, management letters, and financial reporting.
+He is also experienced in data analytics using Power BI, Python, and SQL to deliver deeper audit insights.
+Bill is seeking remote roles such as Audit Senior, Internal Auditor, or Risk and Controls Analyst to lead engagements and strengthen financial governance.”
+
+3. SKILLS SECTION
+
+Display skills in grouped categories:
+
+Audit & Finance Skills
+
+Statutory Audit
+
+IFRS Compliance
+
+Internal Controls
+
+Management Letters
+
+Financial Reporting
+
+Audit Planning
+
+Analytical Review
+
+Variance Analysis
+
+Cost Accounting
+
+Tax Compliance
+
+Data & Technical Skills
+
+Power BI
+
+Python
+
+SQL
+
+Excel (Advanced)
+
+Financial Modelling
+
+Audit Software
+
+ERP Systems (Infor, SAP, QuickBooks)
+
+4. EXPERIENCE TIMELINE
+
+Designed as clean cards or a vertical timeline.
+
+Audit Associate — Ronalds Africa LLP (Apr 2025–Present)
+
+Led statutory audits for 8 entities
+
+Ensured IFRS/ISA compliance
+
+Prepared 12 financial statements & management letters
+
+Mentored junior auditors
+
+Identified control gaps & improved governance
+
+Audit Trainee — Ronalds Africa LLP (Nov 2024–Feb 2025)
+
+Supported planning & execution of audits
+
+Drafted audit schedules, documentation
+
+Participated in client meetings
+
+Account Officer — Mathare Community Outreach (Apr 2024–Present)
+
+Reconciled ledger accounts
+
+Processed 230+ monthly transactions
+
+Prepared financial summaries
+
+Monitored program budgets and donor compliance
+
+Data Analyst Trainee — Azubi Africa (Dec 2023–Aug 2024)
+
+Built Power BI dashboards
+
+Analyzed datasets using Python/SQL
+
+Delivered insights to stakeholders
+
+Assistant Accountant — Britam Holdings PLC (Feb 2023–Oct 2023)
+
+Automated receipting system
+
+Posted 540+ monthly journal entries
+
+Prepared financial statements
+
+Reconciled multi-entity bank accounts
+
+More Experience
+
+Cross-Cultural Mobilizer
+
+Internal Audit Intern at Safaricom
+
+Leadership at Bonga Kawewe
+
+5. PROJECTS SECTION
+
+Include 3–5 clean, professional project cards:
+
+Project 1 — Internal Audit Engagement (NGO Sector)
+Performed full-scope statutory audit, identified compliance gaps, and prepared IFRS-compliant financial statements.
+
+Project 2 — Controls Review for Corporate Client
+Evaluated internal controls, risk exposure, and produced actionable recommendations.
+
+Project 3 — Power BI Audit Dashboard
+Built analytics dashboard to visualize audit findings, risk areas, and financial trends.
+
+Project 4 — Reconciliation Automation (Britam)
+Helped automate receipting, improving processing time by 21%.
+
+6. EDUCATION
+
+Bachelor of Economics & Statistics — University of Nairobi
+
+Certified Public Accountant (CPA-K) — Strathmore University
+
+Data Analytics Program — Azubi Africa
+
+7. TOOLS
+
+Icons or badges for: Excel, Power BI, Python, SQL, QuickBooks, SAP, Google Workspace, Teams, Jira/Trello, Audit Software, etc.
+
+8. CONTACT SECTION
+
+Clean contact form
+
+Email: billkogembo@gmail.com
+
+Phone: +254 728 174 051
+
+LinkedIn button
+
+Call to action: “Let’s Work Together”
+
+STYLE / DESIGN INSTRUCTIONS
+
+Professional, minimal, audit/finance look
+
+Colors: Navy blue, charcoal grey, white
+
+Font style: clean, modern, high credibility
+
+Fully responsive layout
+
+OUTPUT
+
+Generate a full portfolio website with:
+
+Home page
+
+About page
+
+Projects page
+
+Experience page
+
+Contact page
