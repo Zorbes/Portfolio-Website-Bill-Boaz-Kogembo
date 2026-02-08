@@ -15,7 +15,7 @@ export default function CertificationsPage() {
       title: "Xero Certified Professional",
       issuer: "Xero",
       date: "Issued: 2026",
-      image: "/images/certificates/xero-certified.png",
+      image: "/images/xero-certified.png",
       description:
         "Certified in Xero accounting software, including account setup, bank reconciliation, invoicing, and financial reporting.",
     },
@@ -23,7 +23,7 @@ export default function CertificationsPage() {
       title: "CPA (Certified Public Accountant)",
       issuer: "ICPAK",
       date: "Issued: 2025",
-      image: "/images/certificates/cpa.png",
+      image: "/images/cpa.png",
       description:
         "Professional accounting certification covering auditing, taxation, financial reporting, and ethical standards.",
     },
